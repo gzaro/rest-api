@@ -1,5 +1,4 @@
 # rest-api
-A sample spring boot RESTful API
 
 This is a service that implements a simple echo RESTful API. Libraries used:
 
