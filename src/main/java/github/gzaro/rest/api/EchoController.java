@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
@@ -20,7 +22,7 @@ public class EchoController {
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Message processed successfully", response = MessageEnvelope.class)})
     @ApiOperation(value = "Returns the string message contained in the request body")
     @RequestMapping(method = POST, value = PATH, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public MessageEnvelope echo(@RequestBody MessageEnvelope envelope) {
+    public MessageEnvelope echo(@Valid @RequestBody MessageEnvelope envelope) {
         return envelope;
     }
 
